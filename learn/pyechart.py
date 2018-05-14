@@ -1,15 +1,4 @@
-from django.shortcuts import render
-from django.http import HttpResponse,HttpResponseBadRequest
-import urllib.request
 from pyecharts import Bar
-# Create your views here.
-
-def hello(requeset):
-    return HttpResponse("hello learn app！")
-
-
-def pyecharts_bar(request):
-    return render(request,'learn/render.html')
 
 
 def bar():
@@ -19,7 +8,7 @@ def bar():
     bar = Bar("柱状图数据堆叠示例")
     bar.add("商家A", attr, v1, is_stack=True)
     bar.add("商家B", attr, v2, is_stack=True)
-    bar.render(path='learn/pye_bar.html')
+    bar.render(path='../templates/learn/pye_bar.html')
 
 
 if __name__ == '__main__':

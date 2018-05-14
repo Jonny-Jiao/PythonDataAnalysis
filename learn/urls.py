@@ -3,5 +3,5 @@ from . import views
 
 urlpatterns = [
     url(r'^hello/$', views.hello),
-    # url(r'^auth/$',views.auth),
-]
+    url(r'^pye_bar/$',views.pyecharts_bar),
+    ]
