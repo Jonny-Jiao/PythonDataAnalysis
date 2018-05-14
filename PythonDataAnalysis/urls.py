@@ -15,7 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf import settings
+from django.conf.urls import url,include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('public/',include('public.urls')),
+    # path('public2/',include('public2.urls')),
+    # path('learnss/',include('learnss.urls')),
+    path('learn/',include('learn.urls'))
 ]
