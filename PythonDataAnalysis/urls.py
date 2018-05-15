@@ -19,9 +19,10 @@ from django.conf import settings
 from django.conf.urls import url,include
 
 urlpatterns = [
+    # 后台管理界面
     path('admin/', admin.site.urls),
-    path('public/',include('public.urls')),
-    # path('public2/',include('public2.urls')),
-    # path('learnss/',include('learnss.urls')),
+
+    url('^',include('public.urls')),
+
     path('learn/',include('learn.urls'))
 ]

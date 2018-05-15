@@ -1,5 +1,9 @@
 from pyecharts import Bar
-
+import pandas as pd
+from functools import *
+import math
+import numpy as np
+import
 
 def bar():
     attr = ["衬衫", "羊毛衫", "雪纺衫", "裤子", "高跟鞋", "袜子"]
@@ -11,5 +15,19 @@ def bar():
     bar.render(path='../templates/learn/pye_bar.html')
 
 
+def test_reduce():
+    print(reduce( lambda x,y:x*y,range(1,5)))
+
+
+def numpy_test():
+    b = np.array([[1,2,3],[5,7,9]])
+    print(b*b)
+
+
 if __name__ == '__main__':
-    bar()
+    # bar()
+    # test_reduce()
+    # print(math.sin(1))
+
+    # print(np.array([2,0,1,5]))
+    numpy_test()

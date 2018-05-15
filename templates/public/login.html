@@ -1,0 +1,29 @@
+{% extends "public/base.html" %}
+{% load static %}
+
+{#{% load url from future %}#}
+{% block content %}
+    <img src="{% static 'image/signInPageBg.jpg' %}" alt="">
+    <div class='col-sm-3'></div>
+
+    {% if form.errors %}
+        <p>Your username and password didn't match. Please try again.</p>
+    {% endif %}
+    <div class="login-page">
+        <div class="form">
+            <form class="login-form" method="post">
+                {% csrf_token %}
+                {{ form.username }}
+                {{ form.password }}
+                <input id="login_button" type="submit" value="login" />
+                <input type="hidden" name="next" value="{{ next }}"/>
+            </form>
+            {% if not flag %}
+                <p>password or username wrong,please try again</p>
+            {% endif %}
+        </div>
+    </div>
+    <!--<script src={% static 'data/js/jquery.min.js' %}></script>-->
+    <!--<script src={% static "data/js/index.js" %}></script>-->
+
+{% endblock %}
