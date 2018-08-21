@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<dialog>XXXX</dialog>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+<script type="text/javascript" >
+//alert("开始测试");
+
+<!-- script代码，如果需要引用js文件，请使用与HTML中相同的方式。 -->
+jQuery(document).ready(function(){
+checkCustomize = function (){
+var returnval = true;
+var mingxi_count = jQuery(".ssssss tr").size()-3
+for(var i =0;i++;i< mingxi_count){
+    var buhanshui_value = jQuery("#field8312_" + i).val();
+    var shui_value =  jQuery("#field8471_" + i).val();
+    var shuilv = shui_value/buhanshui_value
+    if(shuilv > 0.17 )
+    {
+       returnval = false;
+       Dialog.alert("税率大于17%,请重新输入！");
+       return returnval;
+    }
+
+//    if(beginDate>endDate)
+//    {
+//        Dialog.alert("开始日期不能大于结束日期");
+//        returnval = false;
+//        return returnval;
+//    }
+    return returnval;
+    }
+ }
+
+});
+
+
+
+jQuery(document).ready(function(){
+Dialog.alert("开始测试，税率大于17%,请重新输入！");
+checkCustomize = function (){
+var returnval = true;
+var mingxi_count = jQuery(".excelDetailTable tr").size()-4;
+    Dialog.alert(mingxi_count+'');
+    for(var i =0;i< mingxi_count;i++)
+    {
+    Dialog.alert(i +'!!!');
+    var buhanshui_id = "#field8312_" + i;
+    var shui_id = "#field8471_" + i;
+    console.log(buhanshui_id+'buhanshui_id');
+    console.log(shui_id+'shui_id');
+    var buhanshui_value = jQuery(buhanshui_id).val();
+    var shui_value =  jQuery(shui_id).val();
+    console.log(buhanshui_value+'buhanshui_value');
+    console.log(shui_value+'shui_value');
+    var shuilv = shui_value/buhanshui_value
+    if(shuilv > 0.17 )
+    {
+       returnval = false;
+       Dialog.alert("税率大于17%,请重新输入！");
+       return returnval;
+    }
+    }
+    return returnval;
+ }
+
+});
+
+
+//jQuery(document).ready(function(){
+//checkCustomize = function (){
+//var returnval = true;
+//var mingxi_count = jQuery(".excelDetailTable tr").size()-4;
+//    for(var i =0;i< mingxi_count;i++)
+//    {
+//    var buhanshui_id = "#field8312_" + i;
+//    var shui_id = "#field8471_" + i;
+//    var buhanshui_value = jQuery(buhanshui_id).val();
+//    var shui_value =  jQuery(shui_id).val();
+//    var shuilv = shui_value/buhanshui_value
+//    if(shuilv > 0.17 )
+//    {
+//       returnval = false;
+//       var j =i+1;
+//       Dialog.alert("第"+j+"行明细税率大于17%,请重新输入！");
+//       return returnval;
+//    }
+//    }
+//   return returnval;
+// }
+//});
+
+
+</script>
+</body>
+</html>
